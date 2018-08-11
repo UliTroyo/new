@@ -6,7 +6,7 @@ The script itself is intentionally verbose with comments, because shell scripts 
 
 ## Usage
 
-So let's say you need to manually create the directories **/src/** and **/public/** with the files **index.css** and **index.js** in one and **index.html** in the other. Previously, you might have handled it something like this:
+So let's say you need to manually create the directories `/src/` and `/public/` with the files **index.css** and **index.js** in one and **index.html** in the other. Previously, you might have handled it something like this:
 
 ```shell-script
 $ mkdir src public
@@ -39,9 +39,9 @@ Just group all your subdirectories together, separated by a slash (/), and appen
 
 **New** is a single-file script, so this is what I suggest you do:
 
-1. If you don't already have a directory where you keep all your shell scripts, make one now. I suggest `~/bin` or `~/scripts`.
+**1.** If you don't already have a directory where you keep all your shell scripts, make one now. I suggest `~/bin` or `~/scripts`.
 
-2. If you made a new directory in step 1, you probably need to add it to your PATH.
+**2.** If you made a new directory in step 1, you probably need to add it to your PATH.
 
    To add your directory to the path, you can go into your `.bashrc` or `.bash_profile` (assuming you have one, more info below), and adding the line `export PATH=/your/directory:$PATH`. If you follow the example above, then, you'd add the line `export PATH=~/scripts:$PATH`.
 
