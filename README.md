@@ -7,6 +7,9 @@
 
 The script itself is intentionally verbose with comments, because shell scripts can be dangerous if you don't understand what's going on, and I want even beginners to be able to understand it.
 
+- [Usage](#usage)
+- [Installation](#installation)
+
 ## Usage
 
 So let's say you need to manually create the directories `/src/` and `/public/` with the files `index.css` and `index.js` in one and `index.html` in the other. Previously, you might have handled it something like this:
