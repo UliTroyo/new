@@ -1,4 +1,7 @@
-# New
+<div align="center">
+  <img alt="New logo" src="https://res.cloudinary.com/ulitroyo/image/upload/v1534011660/assets/New_logo.svg" width=360px />
+  <h1>New</h1>  
+</div>
 
 New is an easy-peasy shell script for creating new directories and files.
 
