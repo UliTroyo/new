@@ -9,6 +9,7 @@ The script itself is intentionally verbose with comments, because shell scripts 
 
 - [Usage](#usage)
 - [Installation](#installation)
+- [Roadmap](#roadmap)
 
 ## Usage
 
@@ -68,6 +69,14 @@ $ chmod 755 new
 This permissions setting will make **New** executable for everyone on the machine. If you want to make it executable only for yourself (its owner), you can use setting 700 instead of 755.
 
 You're done! Enjoy **New**!
+
+## Roadmap
+
+The following features are in the works:
+
+- Add help tag with usage notes
+- Add jump tag to select which new directory to jump into
+- Add verbose tag to log output
 
 
 
