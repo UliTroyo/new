@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="New logo" src="https://res.cloudinary.com/ulitroyo/image/upload/v1534460084/New-logo.png" width=250px />
+  <img alt="New logo" src="https://res.cloudinary.com/ulitroyo/image/upload/v1534616577/New_logo.svg" width=250px />
   <h1>New</h1>  
 </div>
 
