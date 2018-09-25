@@ -2,7 +2,7 @@
 
 # new: a script for making new files and directories
 
-VALID='^[[:alnum:],\/.\s]*$'  # matches alphanumeric, whitespace and ',./'
+VALID='^[[:alnum:],_\/.\s]*$'  # matches alphanumeric, whitespace and ',./'
 HOME=$(pwd)                   # our origin dir, so we can return here later
 
 # function for making and traversing directories
