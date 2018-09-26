@@ -2,8 +2,8 @@
 
 # new: a script for making new files and directories
 
-VALID='^[[:alnum:],_\/.\s]*$'  # matches alphanumeric, whitespace and ',./'
-HOME=$(pwd)                   # our origin dir, so we can return here later
+VALID="^[-_.,/0-9a-zA-Z]*$"  # matches alphanumeric and '-_.,/'
+HOME=$(pwd)                  # our origin dir, so we can return here later
 
 # function for making and traversing directories
 create_dirs () {
@@ -40,21 +40,28 @@ create_files () {
 }
 
 # MAIN PROCESS
-#  Implicitly, we pass a set of strings to this script. Our strings are now
+#  Implicitly, we've passed a set of strings to this script. Our strings are now
 #+ positional parameters, though we're only concerned with the first one ($1)
-#+ at any given time. '$#' gives us the total number of positional paramets
-#+ we have, so while $# is greater than zero...
+#+ at any given time. '$#' gives us the total number of positional parameters
+#+ we have, so if $# is equal to zero...
+if [ $# -eq 0 ];then
+  # we tell standard error (>&@) and exit the program...
+  echo "No arguments received." >&2
+  exit 1
+fi
+
+# but if '$#' is greater than zero...
 while [[ $# -gt 0 ]]; do
-  # if $1 matches a VALID string and its length isn't zero...
-  if [[ "$1" =~ $VALID ]] && [ ! -z "$1" ]; then
+  # if $1 matches a VALID string...
+  if [[ "$1" =~ $VALID ]]; then
     # if $1 finds any instances of '/'...
-    if [[ $1 =~ \/ ]]; then
+    if [[ "$1" =~ \/ ]]; then
       # we create some directories!
       create_dirs "$1"
     fi
     #  if the length of $1 is greater than zero after we remove all
     #+ elements before the last match of '/'...
-    if [ -n ${1##*/} ]; then
+    if [ -n "${1##*/}" ]; then
       # we create some files!
       create_files "$1"
     fi
@@ -64,11 +71,6 @@ while [[ $# -gt 0 ]]; do
     #  then delete this instance of $1 and shift $2 into it, if it exists,
     #+ and continue our loop.
     shift
-  # if we get passed an empty string...
-  elif [ -z "$1" ]; then
-    # we tell standard error (>&@) and exit the program.
-    echo "No arguments received." >&2
-    exit 1
   else
     # if all fails, an invalid character was probably used.
     echo "Invalid character used." >&2
