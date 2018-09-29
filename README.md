@@ -77,6 +77,7 @@ The following features are in the works:
 - Add help tag with usage notes
 - Add jump tag to select which new directory to jump into
 - Add verbose tag to log output
+- Add parentheses functionality `new (1-3).c => 1.c 2.c 3.c` and `new (a-c)/ => a/ b/ c/`
 
 
 
